@@ -113,6 +113,7 @@ def batched_nms(boxes, scores, idxs, nms_cfg, class_agnostic=False):
     if len(boxes_for_nms) < split_thr:
         # dets, keep = nms_op(boxes_for_nms, scores, **nms_cfg_)
         keep = nms(boxes_for_nms, scores, **nms_cfg_)
+        # keep_id = keep[torch.argmax(scores[keep])]
         boxes = boxes[keep]
         # scores = dets[:, -1]
         scores = scores[keep]
@@ -129,4 +130,4 @@ def batched_nms(boxes, scores, idxs, nms_cfg, class_agnostic=False):
         boxes = boxes[keep]
         scores = scores[keep]
 
-    return torch.cat([boxes, scores[:, None]], -1), keep
+    return torch.cat([boxes[0], scores[:, None][0]], -1), keep[0]

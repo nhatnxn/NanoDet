@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from nanodet.util import mkdir, Logger, cfg, load_config, convert_old_model
+from nanodet.data.collate import collate_function
+from nanodet.data.dataset import build_dataset
+from nanodet.trainer.task import TrainingTask
+from nanodet.evaluator import build_evaluator
 import os
 import torch
 import argparse
@@ -20,11 +25,7 @@ import warnings
 import pytorch_lightning as pl
 from pytorch_lightning.callbacks import ProgressBar
 
-from nanodet.util import mkdir, Logger, cfg, load_config, convert_old_model
-from nanodet.data.collate import collate_function
-from nanodet.data.dataset import build_dataset
-from nanodet.trainer.task import TrainingTask
-from nanodet.evaluator import build_evaluator
+
 
 
 def parse_args():
