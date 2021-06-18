@@ -130,4 +130,4 @@ def batched_nms(boxes, scores, idxs, nms_cfg, class_agnostic=False):
         boxes = boxes[keep]
         scores = scores[keep]
 
-    return torch.cat([boxes[0], scores[:, None][0]], -1), keep[0]
+    return torch.cat([boxes, scores[:, None]], -1), keep
