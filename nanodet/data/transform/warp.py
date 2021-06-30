@@ -21,7 +21,7 @@ def get_perspective_matrix(perspective=0):
     return P
 
 
-def get_rotation_matrix(degree=0):
+def get_rotation_matrix(degree=180):
     """
 
     :param degree:
