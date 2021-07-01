@@ -56,7 +56,7 @@ data:
       perspective: 0.0
       scale: [0.5, 1.4]
       stretch: [[1, 1], [1, 1]]
-      rotation: 0
+      rotation: 180
       shear: 0
       translate: 0.2
       flip: 0.5
